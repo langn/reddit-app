@@ -18,7 +18,7 @@ function getSubreddit(subreddit) {
                 return cleanResponse(resData);
             }
         }).catch((err) => {
-            if (err.message = 'Subreddit not found') {
+            if (err.message === 'Subreddit not found') {
                 throw err;
             } else {
                 console.error(err);

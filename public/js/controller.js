@@ -16,9 +16,10 @@
             RedditService.getPosts(subreddit)
                 .then((posts) => {
                     //case for a 404
-                    if (model.posts === null) {
+                    if (posts === null) {
                         model.notFound = true;
                     } else {
+                        model.notFound = false;
                         model.posts = posts;
                     }
                 });

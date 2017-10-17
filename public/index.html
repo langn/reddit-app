@@ -26,6 +26,8 @@
 <body ng-app="RedditApp">
 
 <div ng-controller="RedditController as model">
+    <div ng-if="model.notFound" class="alert alert-danger">Subreddit not found. Please try again</div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">

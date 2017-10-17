@@ -7,6 +7,10 @@
     padding-bottom: 10px;
 }
 
+.alert {
+    margin-bottom: 0px;
+}
+
 .input-group button{
     border: 0;
     background: transparent;
