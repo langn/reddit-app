@@ -2,9 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <base href="/">
+    <title>Reddit Viewer</title>
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Boostrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/service.js"></script>
 </head>
-<body>
+<body ng-app="RedditApp">
+
+<div ng-controller="RedditController as model">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <input class="form-control"
+                           ng-model="subreddit"
+                           placeholder="Enter a subreddit">
+                    <span class="input-group-addon">
+                        <button class="btn-default" ng-click="model.search(subreddit)">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <ul class="list-group">
+            <div class="list-group-item centered-list-group-item" ng-repeat="post in model.posts">
+                <div class="row">
+                    <div class="col-sm-2 col-xs-5">
+                        <img ng-src={{post.thumbnail}}>
+                    </div>
+                    <div class="col-sm-1 col-xs-5">
+                        <h2>{{post.score}}</h2>
+                    </div>
+                    <div class="col-sm-8 hidden-xs">
+                        <h2>{{post.title}}</h2>
+                    </div>
+                    <div class="col-sm-1 col-xs-2 no-decoration float-right">
+                        <a target="_blank" ng-href={{post.link}} class="fa fa-4x fa-caret-right"></a>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
 
 </body>
 </html>

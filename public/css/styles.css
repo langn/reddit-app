@@ -1,0 +1,23 @@
+.no-decoration > a {
+    text-decoration: none;
+}
+
+.input-group {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.input-group button{
+    border: 0;
+    background: transparent;
+}
+
+.centered-list-group-item a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.centered-list-group-item h2 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
