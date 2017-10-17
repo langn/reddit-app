@@ -29,6 +29,8 @@ This app is also deployed on Heroku!
 ### How is works
 The app uses AngularJS as the front-end framework, which is configured to run as an SPA. In this case the app actually only has one page. The Angular front end queries the NodeJS backend with a GET request /api/:subreddit.
 
+To do this yourself, simply type a subreddit name into the text box, and then click the search icon.
+
 This path first checks to make sure the subreddit parameter is valid, and it not it returns a 400.
 If it is, then it queries the top 20 posts of the reddit API for that subreddit, using the request module.
 If the subreddit doesn't exist (the API returns an empty children array), then the app returns a 404.
